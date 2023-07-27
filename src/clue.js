@@ -160,20 +160,11 @@ function selectRandom(array) {
 }
 
 function pickMystery() {
-    return {
-    suspect: function() {
-            const suspect = Math.floor(Math.random() * suspectsArray.length);
-            return suspectsArray[suspect];
-        },
-    weapon: function () {
-    const weapon = Math.floor(Math.random() * weaponsArray.length);    
-    return weaponsArray[weapon]; 
-    },
-    room: function () {
-    const room = Math.floor(Math.random() * roomsArray.length);    
-    return roomsArray[room]; 
-    }
-    };
+    let suspect = selectRandom(suspectsArray)    
+    let weapon = selectRandom(weaponsArray)    
+    let room = selectRandom(roomsArray)    
+    const envelope = { suspect, weapon, room }    
+    return envelope
 }
 
 // ITERATION 3
