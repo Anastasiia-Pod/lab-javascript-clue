@@ -171,13 +171,14 @@ function pickMystery() {
 
 function revealMystery() {
     const mystery = pickMystery();
-    const { firstName, lastName } = mystery.suspect();
-    const weapon = mystery.weapon().name;
-    const room = mystery.room().name;
+    const firstName = mystery.suspect.firstName;
+    const lastName = mystery.suspect.lastName;
+    const weapon = mystery.weapon.name;
+    const room = mystery.room.name;
     const upperCaseFirstName = firstName.toUpperCase();
     const upperCaseLastName = lastName.toUpperCase();
     const upperCaseWeapon = weapon.toUpperCase();
     const upperCaseRoom = room.toUpperCase();
-    return `${upperCaseFirstName} ${upperCaseLastName} killed Mr. Boddy using the ${upperCaseWeapon} in the ${upperCaseRoom}!`
+    return `"${upperCaseFirstName} ${upperCaseLastName} killed Mr. Boddy using the ${upperCaseWeapon} in the ${upperCaseRoom}!"`
 }
 console.log(revealMystery());
